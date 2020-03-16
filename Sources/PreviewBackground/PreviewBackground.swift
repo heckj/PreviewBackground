@@ -10,16 +10,16 @@ import SwiftUI
 /// Creates a colored background underneath an enclosed view that matches
 /// from the environment settings - so that previews can have a dark or light
 /// background while experimenting on macOS
-struct PreviewBackground<Content>: View where Content: View {
-    @Environment(\.colorScheme) var colorSchemeMode
+public struct PreviewBackground<Content>: View where Content: View {
+    @Environment(\.colorScheme) public var colorSchemeMode
 
-    let content: () -> Content
+    public let content: () -> Content
 
-    init(@ViewBuilder content: @escaping () -> Content) {
+    public init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
     }
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             if colorSchemeMode == .dark {
                 Color.black

@@ -1,15 +1,22 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "PreviewBackground",
+    platforms: [
+        .iOS(.v13),
+        .macOS(.v10_15),
+        .tvOS(.v13),
+        .watchOS(.v6),
+    ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "PreviewBackground",
-            targets: ["PreviewBackground"]),
+            targets: ["PreviewBackground"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -20,9 +27,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "PreviewBackground",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "PreviewBackgroundTests",
-            dependencies: ["PreviewBackground"]),
+            dependencies: ["PreviewBackground"]
+        ),
     ]
 )

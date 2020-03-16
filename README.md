@@ -29,12 +29,9 @@ struct PreviewBackground_Previews: PreviewProvider {
 ![@heckj](https://img.shields.io/badge/twitter-@heckj-blue.svg?style=flat "Twitter: @heckj")
 [![codecov](https://codecov.io/gh/heckj/PreviewBackground/branch/master/graph/badge.svg)](https://codecov.io/gh/heckj/PreviewBackground)
 
-A collection of utilities and libraries to provide some of the pieces needed in generating data visualization.
-Loosely based on the APIs and mechanisms created by Mike Bostock and contributors to [D3.js](https://d3js.org)
-
 ## Build and test
 
-    git clone https://github.com/swiftviz/swiftviz
-    cd swiftviz
+    git clone https://github.com/heckj/PreviewBackground
+    cd PreviewBackground
     swift test -v
     swiftformat --lint . && swiftlint

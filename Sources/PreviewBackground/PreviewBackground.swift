@@ -19,16 +19,30 @@ public struct PreviewBackground<Content>: View where Content: View {
         self.content = content
     }
 
-    public var body: some View {
-        ZStack {
-            if colorSchemeMode == .dark {
-                Color.black
-            } else {
-                Color.white
-            }
-            content()
+    #if os(iOS)
+        public var body: some View {
+            ZStack {
+                if colorSchemeMode == .dark {
+                    Color.black
+                } else {
+                    Color.white
+                }
+                content()
+            }.statusBar(hidden: true)
         }
-    }
+
+    #elseif os(OSX)
+        public var body: some View {
+            ZStack {
+                if colorSchemeMode == .dark {
+                    Color.black
+                } else {
+                    Color.white
+                }
+                content()
+            }
+        }
+    #endif
 }
 
 #if DEBUG

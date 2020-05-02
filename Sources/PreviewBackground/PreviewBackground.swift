@@ -19,16 +19,30 @@ public struct PreviewBackground<Content>: View where Content: View {
         self.content = content
     }
 
-    public var body: some View {
-        ZStack {
-            if colorSchemeMode == .dark {
-                Color.black
-            } else {
-                Color.white
+    #if os(iOS)
+        public var body: some View {
+            ZStack {
+                if colorSchemeMode == .dark {
+                    Color.black
+                } else {
+                    Color.white
+                }
+                content()
+            }.statusBar(hidden: true)
+        }
+    #elseif os(OSX)
+        public var body: some View {
+            ZStack {
+                if colorSchemeMode == .dark {
+                    Color.black
+                } else {
+                    Color.white
+                }
+                content()
             }
-            content()
-        } //.statusBar(hidden: true) <-- only works for iOS, compiler error for macOS
-    }
+        }
+    #endif
+
 }
 
 #if DEBUG

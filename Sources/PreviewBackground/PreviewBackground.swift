@@ -30,6 +30,7 @@ public struct PreviewBackground<Content>: View where Content: View {
                 content()
             }.statusBar(hidden: true)
         }
+
     #elseif os(OSX)
         public var body: some View {
             ZStack {
@@ -42,7 +43,6 @@ public struct PreviewBackground<Content>: View where Content: View {
             }
         }
     #endif
-
 }
 
 #if DEBUG

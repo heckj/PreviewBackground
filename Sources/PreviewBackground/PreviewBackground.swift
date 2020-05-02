@@ -27,7 +27,7 @@ public struct PreviewBackground<Content>: View where Content: View {
                 Color.white
             }
             content()
-        }
+        } //.statusBar(hidden: true) <-- only works for iOS, compiler error for macOS
     }
 }
 
